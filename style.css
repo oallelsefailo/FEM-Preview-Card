@@ -1,0 +1,230 @@
+:root {
+  --clr-primary-400: hsl(158, 36%, 37%);
+  --clr-primary-200: hsl(30, 38%, 92%);
+
+  --clr-neutral-500: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-netural-100: hsl(0, 0%, 100%);
+
+  --ff-primary: "Fraunces", serif;
+  --ff-secondary: "Montserrat", sans-serif;
+
+  --ff-body: var(--ff-secondary);
+  --ff-accent: var(--ff-secondary);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --fs-regular: 14px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary-200);
+}
+
+main {
+  width: 100%;
+}
+
+.container {
+  min-width: 600px;
+  width: 30%;
+  display: flex;
+  margin: 0 auto;
+  background-color: var(--clr-netural-100);
+  border-radius: 10px;
+}
+
+.hero {
+  width: 50%;
+  background-image: url(./images/image-product-desktop.jpg);
+  background-position: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-size: cover;
+}
+
+.info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding: 35px 40px;
+}
+
+h2 {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-regular);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: 27px;
+  line-height: 1;
+}
+
+.infoBox {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-regular);
+}
+
+.price {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: 26px;
+  color: var(--clr-primary-400);
+}
+
+.discount {
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  text-decoration: line-through;
+  margin-left: 20px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary-400);
+  font-family: var(--ff-secondary);
+  color: var(--clr-netural-100);
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.buttonText {
+  padding-left: 10px;
+}
+
+button:hover {
+  background-color: var(--clr-neutral-500);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .container {
+    min-width: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .hero {
+    width: 100%;
+    height: 350px;
+    background-image: url(./images/image-product-mobile.jpg);
+    border-radius: 10px 10px 0 0;
+  }
+  .info {
+    width: 100%;
+    row-gap: 12px;
+    padding: 25px;
+    border-radius: 0 0 10px 10px;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 1;
+  }
+  h2 {
+    font-size: 12px;
+  }
+  .infoBox {
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 12px;
+  }
+}
